@@ -41,20 +41,22 @@
             border-radius: 15px;
             overflow: hidden;
             background: white;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Yaylanma efekti */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .team-card:hover {
-            transform: translateY(-10px); /* Yukarı kalkma */
+            transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
         }
 
         .team-card img {
             transition: transform 0.5s ease;
+            height: 300px;
+            object-fit: cover;
         }
 
         .team-card:hover img {
-            transform: scale(1.05); /* Resim hafifçe büyür */
+            transform: scale(1.05);
         }
 
         /* Sosyal Medya İkonları Renklendirme */
@@ -73,7 +75,7 @@
 
         .social-icon:hover {
             color: white;
-            transform: rotate(360deg); /* Dönme efekti */
+            transform: rotate(360deg);
         }
 
         /* Marka Renkleri */
@@ -82,7 +84,7 @@
         .social-icon.github:hover { background-color: #333; }
         .social-icon.email:hover { background-color: #ea4335; }
 
-        /* Sayfa Giriş Animasyonu (Fade In Up) */
+        /* Sayfa Giriş Animasyonu */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -103,12 +105,23 @@
         /* Kartların sırayla gelmesi için gecikme */
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        /* Pozisyon Badge'leri */
+        .position-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 2;
+            font-size: 0.8rem;
+            padding: 6px 12px;
+        }
 
     </style>
 </head>
 <body class="d-flex flex-column">
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold fs-4" href="#">
                 <i class="fas fa-laptop-code me-2"></i>Tech Solutions Inc.
@@ -119,8 +132,41 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto"></ul>
-                <button class="btn btn-contact fw-bold">Contact Us</button>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-info-circle me-1"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-users me-1"></i>Team
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-cogs me-1"></i>Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-briefcase me-1"></i>Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                </ul>
+                <button class="btn btn-contact fw-bold">
+                    <i class="fas fa-paper-plane me-2"></i>Contact Us
+                </button>
             </div>
         </div>
     </nav>
@@ -134,13 +180,17 @@
 
         <div class="row g-4 justify-content-center">
             
+            <!-- Mehmet Nurhan - CEO -->
             <div class="col-12 col-md-6 col-lg-4 animate-card delay-1">
                 <div class="card team-card h-100 shadow-sm">
-                    <div class="overflow-hidden"> <img src="https://placehold.co/600x400/2c3e50/white?text=Mehmet+Nurhan" class="card-img-top" alt="Mehmet Nurhan">
+                    <div class="overflow-hidden position-relative">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                             class="card-img-top" alt="Mehmet Nurhan - CEO">
+                        <span class="position-badge bg-primary">CEO</span>
                     </div>
                     <div class="card-body text-center p-4">
                         <h4 class="card-title fw-bold mb-1">Mehmet Nurhan</h4>
-                        <p class="badge bg-primary mb-3">CEO & Founder</p>
+                        <p class="badge bg-primary bg-opacity-10 text-primary mb-3">CEO & Founder</p>
                         <p class="card-text text-secondary mb-4">Visionary leader with 10+ years of experience in scaling tech startups and AI integration.</p>
                         
                         <div class="d-flex justify-content-center gap-2">
@@ -152,19 +202,44 @@
                 </div>
             </div>
 
+            <!-- Ali Ozturk - CTO -->
             <div class="col-12 col-md-6 col-lg-4 animate-card delay-2">
                 <div class="card team-card h-100 shadow-sm">
-                    <div class="overflow-hidden">
-                        <img src="https://placehold.co/600x400/4a90e2/white?text=Ali+Ozturk" class="card-img-top" alt="Ali Ozturk">
+                    <div class="overflow-hidden position-relative">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                             class="card-img-top" alt="Ali Ozturk - CTO">
+                        <span class="position-badge bg-info text-dark">CTO</span>
                     </div>
                     <div class="card-body text-center p-4">
                         <h4 class="card-title fw-bold mb-1">Ali Ozturk</h4>
-                        <p class="badge bg-info text-dark mb-3">CTO</p>
+                        <p class="badge bg-info bg-opacity-10 text-info mb-3">Chief Technology Officer</p>
                         <p class="card-text text-secondary mb-4">Full-stack architect passionate about clean code, cloud infrastructure, and security.</p>
                         
                         <div class="d-flex justify-content-center gap-2">
                             <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" class="social-icon github"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-icon email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayşe Demir - CFO (Yeni Eklendi) -->
+            <div class="col-12 col-md-6 col-lg-4 animate-card delay-3">
+                <div class="card team-card h-100 shadow-sm">
+                    <div class="overflow-hidden position-relative">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                             class="card-img-top" alt="Ayşe Demir - CFO">
+                        <span class="position-badge bg-warning text-dark">CFO</span>
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <h4 class="card-title fw-bold mb-1">Ayşe Demir</h4>
+                        <p class="badge bg-warning bg-opacity-10 text-warning mb-3">Chief Financial Officer</p>
+                        <p class="card-text text-secondary mb-4">Strategic financial planner with expertise in venture capital and business growth strategies.</p>
+                        
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
                             <a href="#" class="social-icon email"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
