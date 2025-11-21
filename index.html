@@ -1,70 +1,171 @@
 <!DOCTYPE html>
-<html lang="en"> <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Team - Tech Solutions Inc.</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="d-flex flex-column min-vh-100 bg-light">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <style>
+        /* Genel Ayarlar */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        /* Navbar Özelleştirme */
+        .navbar {
+            background: linear-gradient(90deg, #0062cc 0%, #00c6ff 100%) !important;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+        
+        .btn-contact {
+            background-color: white;
+            color: #0062cc;
+            border-radius: 50px;
+            padding: 8px 25px;
+            transition: all 0.3s ease;
+        }
+        .btn-contact:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.4);
+        }
+
+        /* Kart Tasarımı ve Hover Efektleri */
+        .team-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Yaylanma efekti */
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px); /* Yukarı kalkma */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+        }
+
+        .team-card img {
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover img {
+            transform: scale(1.05); /* Resim hafifçe büyür */
+        }
+
+        /* Sosyal Medya İkonları Renklendirme */
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+            color: #6c757d;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            color: white;
+            transform: rotate(360deg); /* Dönme efekti */
+        }
+
+        /* Marka Renkleri */
+        .social-icon.linkedin:hover { background-color: #0077b5; }
+        .social-icon.twitter:hover { background-color: #1da1f2; }
+        .social-icon.github:hover { background-color: #333; }
+        .social-icon.email:hover { background-color: #ea4335; }
+
+        /* Sayfa Giriş Animasyonu (Fade In Up) */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .animate-card {
+            animation-name: fadeInUp;
+            animation-duration: 0.8s;
+            animation-fill-mode: both;
+        }
+        
+        /* Kartların sırayla gelmesi için gecikme */
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+
+    </style>
+</head>
+<body class="d-flex flex-column">
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
+            <a class="navbar-brand fw-bold fs-4" href="#">
                 <i class="fas fa-laptop-code me-2"></i>Tech Solutions Inc.
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    </ul>
-                <button class="btn btn-light text-primary fw-semibold">Contact Us</button>
+                <ul class="navbar-nav me-auto"></ul>
+                <button class="btn btn-contact fw-bold">Contact Us</button>
             </div>
         </div>
     </nav>
 
     <main class="container my-5 flex-grow-1">
-        <div class="text-center mb-5">
-            <h2 class="display-6 fw-bold">Meet Our Team</h2>
-            <p class="text-muted">The minds behind our innovation.</p>
+        <div class="text-center mb-5 animate-card">
+            <span class="badge bg-primary bg-opacity-10 text-primary mb-2 px-3 py-2 rounded-pill">THE DREAM TEAM</span>
+            <h2 class="display-5 fw-bold text-dark">Meet Our Experts</h2>
+            <p class="text-muted fs-5">Innovative minds shaping the future of technology.</p>
         </div>
 
         <div class="row g-4 justify-content-center">
             
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 border-0 shadow-sm hover-effect">
-                    <img src="https://placehold.co/600x400/2c3e50/white?text=Mehmet+Nurhan" class="card-img-top" alt="Mehmet Nurhan">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold">Mehmet Nurhan</h5>
-                        <p class="card-text text-primary">CEO</p>
-                        <p class="card-text small text-muted">Leading the vision and strategy of Tech Solutions Inc.</p>
+            <div class="col-12 col-md-6 col-lg-4 animate-card delay-1">
+                <div class="card team-card h-100 shadow-sm">
+                    <div class="overflow-hidden"> <img src="https://placehold.co/600x400/2c3e50/white?text=Mehmet+Nurhan" class="card-img-top" alt="Mehmet Nurhan">
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <h4 class="card-title fw-bold mb-1">Mehmet Nurhan</h4>
+                        <p class="badge bg-primary mb-3">CEO & Founder</p>
+                        <p class="card-text text-secondary mb-4">Visionary leader with 10+ years of experience in scaling tech startups and AI integration.</p>
                         
-                        <div class="d-flex justify-content-center gap-3 mt-3">
-                            <a href="#" class="text-secondary fs-5"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="text-secondary fs-5"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="text-secondary fs-5"><i class="fas fa-envelope"></i></a>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon email"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="https://placehold.co/600x400/2c3e50/white?text=Ali+Ozturk" class="card-img-top" alt="Ali Ozturk">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold">Ali Ozturk</h5>
-                        <p class="card-text text-primary">CTO</p>
-                        <p class="card-text small text-muted">Overseeing all technical aspects and development.</p>
+            <div class="col-12 col-md-6 col-lg-4 animate-card delay-2">
+                <div class="card team-card h-100 shadow-sm">
+                    <div class="overflow-hidden">
+                        <img src="https://placehold.co/600x400/4a90e2/white?text=Ali+Ozturk" class="card-img-top" alt="Ali Ozturk">
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <h4 class="card-title fw-bold mb-1">Ali Ozturk</h4>
+                        <p class="badge bg-info text-dark mb-3">CTO</p>
+                        <p class="card-text text-secondary mb-4">Full-stack architect passionate about clean code, cloud infrastructure, and security.</p>
                         
-                        <div class="d-flex justify-content-center gap-3 mt-3">
-                            <a href="#" class="text-secondary fs-5"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="text-secondary fs-5"><i class="fab fa-github"></i></a>
-                            <a href="#" class="text-secondary fs-5"><i class="fas fa-envelope"></i></a>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon github"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-icon email"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
@@ -73,10 +174,15 @@
         </div>
     </main>
 
-    <footer class="bg-dark text-white py-4 mt-auto">
+    <footer class="bg-dark text-white py-4 mt-auto border-top border-secondary">
         <div class="container text-center">
-            <p class="mb-1">&copy; 2025 Tech Solutions Inc.</p>
-            <small class="text-secondary">Built for CNG-361 Midterm</small>
+            <div class="mb-3">
+                <a href="#" class="text-white text-decoration-none mx-2 hover-underline">Privacy</a>
+                <a href="#" class="text-white text-decoration-none mx-2 hover-underline">Terms</a>
+                <a href="#" class="text-white text-decoration-none mx-2 hover-underline">Support</a>
+            </div>
+            <p class="mb-1 opacity-75">&copy; 2025 Tech Solutions Inc.</p>
+            <small class="text-secondary fst-italic">Designed for CNG-361 Midterm</small>
         </div>
     </footer>
 
